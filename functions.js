@@ -14,10 +14,12 @@ const error_message = document.querySelector('.message')
 
 
 document.querySelector('.submit-button').addEventListener('click', () => {
+    console.log("working")
     text_field.value && get_weather_data()
 })
 
 text_field.addEventListener('keypress', (event) =>{
+    console.log("key-working")
     (event.keyCode === 13 && text_field.value) && get_weather_data()
 })
 
@@ -55,7 +57,9 @@ function get_weather_data(){
     let user_location = text_field.value
 
     let url = `https://api.openweathermap.org/data/2.5/weather?q=${user_location}&APPID=${api_key}`
-
+    
+    console.log("fetching")
+    
     fetch(url)
         .then(res => res.json())
         .then(data => {
