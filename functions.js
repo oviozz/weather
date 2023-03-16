@@ -54,7 +54,7 @@ function get_weather_data(){
     let api_key = '9664eaa67153b698bb3ef8f0027a078f'
     let user_location = text_field.value
 
-    let url = `http://api.openweathermap.org/data/2.5/weather?q=${user_location}&APPID=${api_key}`
+    let url = `https://api.openweathermap.org/data/2.5/weather?q=${user_location}&APPID=${api_key}`
 
     fetch(url)
         .then(res => res.json())
